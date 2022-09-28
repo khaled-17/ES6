@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+    <script>
+var fruits = ["apple", "strawberry", "banana", "orange","mango"];
+// var fruits = ["apple", "atrawberry" ];
+ // Check if all elements in array are strings
+
+var isStringsArray = arr => arr.every(i => typeof i === "string")
+
+var isSstartA = arr => arr.some( i => i.charAt(0) == "a"  )
+var filterarr = arr => arr.filter( i => (i.charAt(0) == "a"||i.charAt(0) == "b")  )
+
+
+
+let text = "";
+fruits.forEach(myFunction);
+function myFunction(item, index) {
+     
+  text += index+1 + ": " + item + "<br>"; 
+}
+
+
+var newArr = fruits.map(mynewArr);
+function mynewArr(fruit) {
+  return "ilove "+fruit +" <br>";
+}
+
+
+
+
+
+ 
+// console.log( 
+   
+//   foreacharr("text"),
+//  )
+ document.write(isStringsArray(fruits));
+ document.write("<br>");
+
+ document.write( isSstartA(fruits));
+ document.write("<br>");
+
+ document.write( filterarr(fruits));
+ document.write("<br>");
+
+ document.write("<br>");
+ document.write("<br>");
+ document.write( "forEach" );
+ document.write("<br>");
+
+ document.write( text );
+ document.write("<br>");
+
+ document.write( newArr );
+ document.write("<br>");
+
+
+
+    </script>
+</body>
+</html>

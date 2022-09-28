@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1>open consol</h1>
+<body>
+    
+
+
+
+    <script>
+// create   Map
+const map_student  = new Map(); // an empty map
+// console.log(map_student);  
+
+map_student.set ("ali",{Grades:[
+                                  {Coursename:"js" ,Grade:"good" }
+                                 ,{Coursename:"html" ,Grade:"god" } 
+                                ]} )
+ 
+// console.log(map_student);  
+
+ 
+
+map_student.forEach(myFunction)
+
+
+function myFunction(values, keys) {
+  console.log(keys);
+  console.log(values.Grades[0].Coursename);
+
+  console.log(...values.Grades)
+
+
+  for (let key  of values.Grades) {
+    console.log(key );
+  }
+
+}
+
+
+
+
+ 
+// map_student.map(({Coursename, Grade})=>{ 
+
+// console.log(`${Coursename} with quantity ${Grade}  `)
+
+// });
+
+// looping through Map
+// for (let [key, value] of map_student) {
+//     console.log(key + '- ' + value);
+
+//     document.write(
+//         value.map_student(a => Object.values(a).join(' '))
+//   .join('<br>')
+// );
+
+    
+// }
+// map_student.forEach(function(value, key) {
+//   console.log(key + '- ' + value)
+
+//   document.write(
+//     gr.map(a => Object.values(a).join(' '))
+//   .join('<br>')
+// );
+
+
+// })
+ 
+    //   for (const objIndex of map_student) {
+    //      console.log("class", objIndex);
+
+    //     for (const key in objIndex) {
+    //         console.log(key,objIndex[key]);
+    //      }
+    //    }
+ 
+    </script>
+</body>
+</html>

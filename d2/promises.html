@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+
+<body>
+ 
+    <div class="container  "> 
+
+
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="post"> 
+                        <div class="card">
+                            <div class="card-body">Basic card</div>
+                        </div>
+                        
+                
+
+
+            </div>
+        </div>
+
+        
+
+
+    </div>
+
+    <script>
+
+
+        async function getUsers(url) {
+            try {
+                let res = await fetch(url);
+                return await res.json();
+                console.log(res);
+
+
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+
+        // .............................
+
+
+        async function renderUsers() {
+            let url = 'https://jsonplaceholder.typicode.com/users';
+            let users = await getUsers(url);
+            function displayBotton() {
+                let html = '';
+                users.forEach(user => {
+                    let htmlSegment = `<div  class="btn-group" >
+ <button  onclick="fun(this)"   type="button" class="btn btn-primary" value ="${user.id}">${user.name}</button>
+                           </div>`;
+                    html += htmlSegment;
+                    let container = document.querySelector('.container');
+                    container.innerHTML = html;
+                });
+            } displayBotton();
+        } renderUsers();
+
+
+
+
+
+
+
+        function fun(event) {
+            console.log(event.value);
+            var id = event.value
+            var link = 'https://jsonplaceholder.typicode.com/posts?userId=' + id
+            console.log(link);
+            // window.location.href= ;
+
+            async function post() {
+                let url = link;
+                let users = await getUsers(url);
+                function displaypost() {
+                    let html = '';
+                    users.forEach(user => {
+                        let htmlSegment = `<div >
+
+                            <div class="card">
+                            <div class="card-body">          
+                               ${user.title} 
+                                </div>
+                        </div>
+                
+ 
+                   </div>
+
+
+                          </div>`;
+                        html += htmlSegment;
+                        let container = document.querySelector('.post');
+                        container.innerHTML = html;
+                    });
+                } displaypost();
+            } post();
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

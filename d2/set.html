@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+     </head>
+    <body>
+      <h1 style="color:red ;">open consol</h1>
+
+        <p id="size"></p>
+        <p id="desplay"></p>
+
+
+
+        <script>
+var student = new Set( );
+
+  /* Add     */
+student.add("ali");
+student.add("bee");
+student.add("cat");
+document.getElementById("size").innerHTML = student.size;
+
+// desplay  
+let text = "";
+student.forEach (function(val) {
+  text += val + "<br>";
+})
+
+document.getElementById("desplay").innerHTML = text;
+
+console.log(...student)
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>proxy</title>
+</head>
+<body>
+    <h1 style="color:red ;">open consol</h1>
+
+    <h1>proxey</h1>
+
+    <script>
+        
+      var stud ={
+          name:"khaled",
+          age:12,
+          address:"sohag"
+      }
+
+
+
+
+     var handel= {
+        get:function(target,property){
+                if (target.hasOwnProperty(property)) {
+                      return target[property]
+                } else {
+                    throw("property not in opject ")
+                    
+                }
+
+              },
+
+
+              set:function(target,property,newProparty) {
+                if (!target.hasOwnProperty(property)) {
+                   throw("property not in opject ")
+                } 
+                if (property==="name") {
+                    if (newProparty.length!=7) {
+                        throw("your new proparty is not = 7 charcter")
+                    } 
+
+                }
+
+                if (property==="address") {
+                    if (typeof(newProparty)!=="string") {
+                        throw("your new proparty is not streng")
+                    } 
+
+                }
+                if (property==="age") {
+                    if (typeof(newProparty)!=="number" ||newProparty<25||newProparty>60) {
+                        throw("your new proparty is not btween 25 && 60  or mapy its not number")
+                    } 
+
+                }
+
+    //   adress valdetion          
+
+    target[property]=newProparty
+
+              }
+
+
+
+  
+           
+        }
+        
+       
+     
+     var proxy= new Proxy(stud,handel);
+
+console.log(proxy.name);
+console.log(proxy.age);
+// console.log(proxy.test);
+ proxy.name="khaledr"        //7 chr
+ console.log(proxy.name);
+//  proxy.name="khaled"       //6  chr
+
+console.log("address...................");
+proxy.address="sreng"
+console.log(proxy.address);
+// proxy.address=111
+ 
+console.log("age...................");
+proxy.age=50
+console.log(proxy.age);
+proxy.age=65
+ 
+
+    </script>
+</body>
+</html>
